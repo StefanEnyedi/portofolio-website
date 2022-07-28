@@ -14,12 +14,118 @@
 /* Custom properties */
 
 --primary-color: #014d4e;
---secondary-color: #ff9408;
+/* --secondary-color: #ff9408; */
+--secondary-color: #FAF0CA;
 --secondary-color-m: #ff94088e;
 --tertiary-color: #017374;
 --tertiary-color-m: #01727498;
 }
 
 body{
-    font-family:
+    font-family: "Baloon Tamma 2", cursive;
+    line-height: 1.8;
+    display: flex;
+}
+li{
+    list-style: none;
+}
+a:link,
+a:visited{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+aside#sideNav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+div.content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+div.contentLogo img{
+    width: calc(3vw + 3vh);
+    object-fit: cover;
+}
+ul.contentSocial{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+ul.contentSocial a i {
+    font-size: clamp(1.5rem, 0.7541rem + 0.6557vw, 3rem);
+    color: white;
+    padding-bottom: clamp(3rem, 0.7541rem + 0.6557vw, 4rem);
+    transition: color 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ul.contentSocial a i:hover,
+ul.contentSocial a i:active{
+    color: var(--secondary-color);
+}
+main{
+    flex: 1;
+}
+header#header{
+    background-color: var(--secondary-color);
+    height: calc(3vw + 3vh);
+    z-index: 2;
+}
+nav#mainNav{
+    height: 100%;
+}
+ul.mainLinks{
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+}
+ul.mainLinks li{
+    padding-right: 3vw;
+}
+ul.mainLinks li a {
+    position: relative;
+    padding: 0.2rem 0.6rem;
+    font-size: clamp(1.5rem, 0.7541rem + 0.6557vw, 3rem);
+}
+ul.mainLinks li a:link::before, 
+ul.mainLinks li a:visited::before,
+ul.mainLinks li a:link::after, 
+ul.mainLinks li a:visited::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    background-color: red;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(1, 0, 0, 1);
+}
+ul.mainLinks li a:link::before, 
+ul.mainLinks li a:visited::before{
+    top: 0; 
+    /* transform-origin: left; */
+}
+ul.mainLinks li a:link::after, 
+ul.mainLinks li a:visited::after{
+    bottom: 0;
+    transform-origin: left;
+}
+/* ul.mainLinks li a:hover::before, 
+ul.mainLinks li a:active::before, */
+ul.mainLinks li a:hover::after, 
+ul.mainLinks li a:active::after,
+ul.mainLinks li a:hover::after{
+    transform: scaleX(1);
+}
+ul.mainLinks a:hover{
+    color: red;
+    transition: hover 0.5s cubic-bezier(1, 0, 0, 1);
 }

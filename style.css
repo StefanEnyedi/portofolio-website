@@ -14,8 +14,8 @@
     /* Custom properties */
 
     --primary-color: #014d4e;
-    /* --secondary-color: #ff9408; */
-    --secondary-color: #FAF0CA;
+    --secondary-color: #ff9408;
+    /* --secondary-color: #FAF0CA; */
     --secondary-color-m: #ff94088e;
     --tertiary-color: #017374;
     --tertiary-color-m: #01727498;
@@ -218,11 +218,34 @@ div.showcaseContent{
     transform: scaleX(1);
     transform-origin: left;
 }
+section#work{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--tertiary-color);
+}
+div.workCard{
+    padding: 2rem;
+    flex-basis: 40rem;
+    /* flex-grow: 1; */
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+div.workCard img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: filter 0.45s ease;
+}
+div.workCard img:hover,
+div.workCard img:active {
+    filter: sepia(80%);
+}
 
 @media screen and (max-width: 900px){
 
     section#showcase{
-        background-position: 100%;
+        background-position: 80%;
         align-items: flex-end;
     }
 }

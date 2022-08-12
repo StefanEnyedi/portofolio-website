@@ -1,10 +1,10 @@
-const hamburgerContainer = document.querySelector('#mainNav');
-const hamburger = document.querySelector('.mainHamburger');
-const links = document.querySelectorAll('.mainLinks li');
+const hamburgerContainer = document.querySelector("#header__main-nav");
+const hamburger = document.querySelector(".header__main-nav--hamburger");
+const links = document.querySelectorAll(".header__main-nav--links li");
 
 hamburger.addEventListener("click", () => {
-    hamburgerContainer.classList.toggle("clicked");
-    links.forEach((link) =>  {
-        link.classList.toggle('fade');
-    });
-})
+  hamburgerContainer.classList.toggle("clicked");
+  links.forEach((link) => {
+    link.classList.toggle("fade");
+  });
+});
